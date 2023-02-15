@@ -30,13 +30,13 @@ class Category extends StatelessWidget {
                   icon: Icon(
                     category[index].icon,
                     size: 30,
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).colorScheme.secondary,
                   ),
                 ),
                 Text(
                   category[index].cTitle,
                   style: TextStyle(
-                    color: Theme.of(context).accentColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),

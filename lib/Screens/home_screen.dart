@@ -1,63 +1,39 @@
-// import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
-// import 'package:awesome_bottom_bar/tab_item.dart';
 import 'package:flutter/material.dart';
-// import 'package:property_app/Screens/properties_screen.dart';
-// import 'package:property_app/Screens/search_screen.dart';
+import 'package:property_app/Screens/auth/signup_screen.dart';
 
 import '../Widgets/app_drawer.dart';
 import '../Widgets/categoris_main_screen.dart';
 import '../Widgets/recommende_properties.dart';
-// import 'favorite_screen.dart';
-// import 'profile_screen.dart';
+import 'nav_bar_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+//  Type bottomNavigationBar=BottomNavigationBar;
+
+  // HomePage({required this.bottomNavigationBar, super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-// List<TabItem> items = const [
-//   TabItem(
-//     icon: Icons.home,
-//     title: 'Home',
-//   ),
-//   TabItem(
-//     icon: Icons.location_city,
-//     title: 'Properties',
-//   ),
-//   TabItem(
-//     icon: Icons.search_sharp,
-//     title: 'Search',
-//   ),
-//   TabItem(
-//     icon: Icons.favorite,
-//     title: 'Cart',
-//   ),
-//   TabItem(
-//     icon: Icons.account_box,
-//     title: 'profile',
-//   ),
-// ];
-// int visit = 1;
-// List<Widget> _screen = [
-//   const HomePage(),
-//   PropertiesList(),
-//   const SearchScreen(),
-//   const FavoriteScreen(),
-//   const ProfileScreen(),
-// ];
-
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xffF8F3F3),
+      // backgroundColor: const Color(0xffF8F3F3),
+      backgroundColor: const Color(0xffEBEBEB),
+
       // App Drawer
       drawer: const AppDrawe(),
       appBar: AppBar(
         actions: [
-          IconButton(onPressed: () {}, icon: const Icon(Icons.person_outlined))
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignupPage()));
+              },
+              icon: const Icon(Icons.person_outlined))
         ],
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
         backgroundColor: Colors.white,
@@ -94,6 +70,8 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(height: 10),
                     TextField(
                       decoration: InputDecoration(
+                        contentPadding: const EdgeInsets.symmetric(
+                            vertical: 14, horizontal: 20),
                         suffixIcon: const Icon(Icons.done),
                         prefixIcon: Icon(
                           Icons.search,
@@ -115,7 +93,7 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 10),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 'Categories',
                 style: TextStyle(
@@ -126,13 +104,16 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
             const SizedBox(height: 10),
-            SizedBox(
-              height: 100,
-              child: Category(),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: SizedBox(
+                height: 100,
+                child: Category(),
+              ),
             ),
             const SizedBox(height: 10),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 15),
+              padding: EdgeInsets.symmetric(horizontal: 10),
               child: Text(
                 'Recommended',
                 style: TextStyle(
@@ -144,11 +125,11 @@ class _HomePageState extends State<HomePage> {
             ),
             const SizedBox(height: 10),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 15),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Container(
                 height: 220,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(12),
                   color: Colors.white,
                 ),
                 child: Padding(
@@ -182,20 +163,6 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      // bottomNavigationBar: BottomBarSalomon(
-      //   backgroundSelected: const Color(0xff1E3C64),
-      //   enableShadow: true,
-      //   items: items,
-      //   backgroundColor: Colors.white,
-      //   color: Theme.of(context).primaryColor,
-      //   colorSelected: Theme.of(context).accentColor,
-      //   indexSelected: visit,
-      //   onTap: (int index) => setState(
-      //     () {
-      //       visit = index;
-      //     },
-      //   ),
-      // ),
     );
   }
 }

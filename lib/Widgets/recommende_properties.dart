@@ -22,7 +22,7 @@ class RecommendedProperties extends StatelessWidget {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             // color: const Color(0xffF8F3F3),
-            color: const Color.fromARGB(255, 185, 176, 176),
+            color: const Color(0xffEBEBEB),
           ),
           // child: Image(
           // image: AssetImage('assets/images/Logo.png'),

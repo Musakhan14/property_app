@@ -16,14 +16,15 @@ class MyApp extends StatelessWidget {
       title: 'Property App',
       theme: ThemeData(
           primaryColor: const Color(0xff1E3C64),
-          accentColor: const Color(0xffEC9E37),
           canvasColor: const Color.fromRGBO(255, 254, 229, 1),
           textTheme: const TextTheme(
             titleMedium: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.bold,
             ),
-          )),
+          ),
+          colorScheme: ColorScheme.fromSwatch()
+              .copyWith(secondary: const Color(0xffEC9E37))),
       home: const SplashScreen(),
     );
   }
