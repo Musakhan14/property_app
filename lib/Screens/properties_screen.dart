@@ -12,7 +12,6 @@ class PropertiesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xffEBEBEB),
-
       // App Drawer
       drawer: const AppDrawe(),
       appBar: AppBar(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:property_app/Screens/auth/login_screen.dart';
 
 class SignupPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -30,7 +31,6 @@ class SignupPage extends StatelessWidget {
               child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(22),
-                  //set border radius more than 50% of height and width to make circle
                 ),
                 color: const Color(0xffEBEBEB),
                 child: SingleChildScrollView(
@@ -43,7 +43,15 @@ class SignupPage extends StatelessWidget {
                         TextFormField(
                           controller: _usernameController,
                           decoration: InputDecoration(
+                            hintStyle: const TextStyle(
+                              color: Color.fromARGB(255, 102, 96, 96),
+                              fontWeight: FontWeight.normal,
+                            ),
                             filled: true,
+                            labelStyle: const TextStyle(
+                              color: Color.fromARGB(255, 102, 96, 96),
+                              fontWeight: FontWeight.normal,
+                            ),
                             fillColor: Colors.white,
                             labelText: 'Username',
                             hintText: 'Enter your username',
@@ -68,6 +76,14 @@ class SignupPage extends StatelessWidget {
                         TextFormField(
                           controller: _emailController,
                           decoration: InputDecoration(
+                            hintStyle: const TextStyle(
+                              color: Color.fromARGB(255, 102, 96, 96),
+                              fontWeight: FontWeight.normal,
+                            ),
+                            labelStyle: const TextStyle(
+                              color: Color.fromARGB(255, 102, 96, 96),
+                              fontWeight: FontWeight.normal,
+                            ),
                             filled: true,
                             fillColor: Colors.white,
                             labelText: 'Email',
@@ -94,6 +110,14 @@ class SignupPage extends StatelessWidget {
                           controller: _passwordController,
                           obscureText: true,
                           decoration: InputDecoration(
+                            hintStyle: const TextStyle(
+                              color: Color.fromARGB(255, 102, 96, 96),
+                              fontWeight: FontWeight.normal,
+                            ),
+                            labelStyle: const TextStyle(
+                              color: Color.fromARGB(255, 102, 96, 96),
+                              fontWeight: FontWeight.normal,
+                            ),
                             filled: true,
                             fillColor: Colors.white,
                             labelText: 'Password',
@@ -120,6 +144,14 @@ class SignupPage extends StatelessWidget {
                           controller: _passwordController,
                           obscureText: true,
                           decoration: InputDecoration(
+                            hintStyle: const TextStyle(
+                              color: Color.fromARGB(255, 102, 96, 96),
+                              fontWeight: FontWeight.normal,
+                            ),
+                            labelStyle: const TextStyle(
+                              color: Color.fromARGB(255, 102, 96, 96),
+                              fontWeight: FontWeight.normal,
+                            ),
                             filled: true,
                             fillColor: Colors.white,
                             labelText: 'Confirm Password',
@@ -170,7 +202,7 @@ class SignupPage extends StatelessWidget {
                           width: double
                               .infinity, // adjust this to the desired width
                           decoration: BoxDecoration(
-                            color: Colors.grey[200],
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(12.0),
                             border: Border.all(
                               width: 1.0,
@@ -193,7 +225,7 @@ class SignupPage extends StatelessWidget {
                           width: double
                               .infinity, // adjust this to the desired width
                           decoration: BoxDecoration(
-                            color: Colors.grey[200],
+                            color: Colors.white,
                             borderRadius: BorderRadius.circular(12.0),
                             border: Border.all(
                               width: 1.0,
@@ -209,6 +241,21 @@ class SignupPage extends StatelessWidget {
                             ],
                           ),
                         ),
+                        const SizedBox(height: 5.0),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Text('Already Have Account'),
+                            TextButton(
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => LoginScreen()));
+                                },
+                                child: const Text('LogIn'))
+                          ],
+                        )
                       ],
                     ),
                   ),
