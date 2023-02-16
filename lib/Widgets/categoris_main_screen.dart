@@ -6,42 +6,44 @@ class Category extends StatelessWidget {
   final category = CATEGORIES;
 
   Category({super.key});
-  // IconData icon;
-  // String text;
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       scrollDirection: Axis.horizontal,
       itemCount: category.length,
       itemBuilder: (context, index) {
-        return Card(
-          elevation: 1,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    category[index].icon,
-                    size: 30,
-                    color: Theme.of(context).colorScheme.secondary,
+        return SizedBox(
+          height: 130,
+          width: 125,
+          child: Card(
+            elevation: 1,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      category[index].icon,
+                      size: 30,
+                      color: Theme.of(context).colorScheme.secondary,
+                    ),
                   ),
-                ),
-                Text(
-                  category[index].cTitle,
-                  style: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              ],
+                  Text(
+                    category[index].cTitle,
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         );

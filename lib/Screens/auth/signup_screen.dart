@@ -1,11 +1,17 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:property_app/Screens/auth/login_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 class SignupPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+
+  SignupPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +20,7 @@ class SignupPage extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text('Sign Up'),
+        title: const Text('Sign Up'),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -72,7 +78,7 @@ class SignupPage extends StatelessWidget {
                             return null;
                           },
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         TextFormField(
                           controller: _emailController,
                           decoration: InputDecoration(
@@ -105,7 +111,7 @@ class SignupPage extends StatelessWidget {
                             return null;
                           },
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         TextFormField(
                           controller: _passwordController,
                           obscureText: true,
@@ -139,7 +145,7 @@ class SignupPage extends StatelessWidget {
                             return null;
                           },
                         ),
-                        SizedBox(height: 16),
+                        const SizedBox(height: 16),
                         TextFormField(
                           controller: _passwordController,
                           obscureText: true,
@@ -234,7 +240,9 @@ class SignupPage extends StatelessWidget {
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: const [
+                            children:  [
+                              Icon(FontAwesomeIcons.google,
+                                  color: Theme.of(context).primaryColor),
                               // Image.asset('assets/google_logo.png', height: 24.0),
                               SizedBox(width: 10.0),
                               Text('Login with Google'),
@@ -251,7 +259,8 @@ class SignupPage extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => LoginScreen()));
+                                          builder: (context) =>
+                                              const LoginScreen()));
                                 },
                                 child: const Text('LogIn'))
                           ],

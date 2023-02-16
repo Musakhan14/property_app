@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../Widgets/app_drawer.dart';
 import '../properties_data.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PropertiesList extends StatelessWidget {
   PropertiesList({super.key});
 
   final properties = PROPERTIES_DATA;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +30,7 @@ class PropertiesList extends StatelessWidget {
             return Card(
               color: Colors.white,
               child: Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(5.0),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -44,7 +44,7 @@ class PropertiesList extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    const SizedBox(width: 2),
+                    const SizedBox(width: 4),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +65,7 @@ class PropertiesList extends StatelessWidget {
                             fontSize: 18,
                           ),
                         ),
-                        const SizedBox(height: 4),
+                        const SizedBox(height: 5),
                         Row(
                           children: [
                             const Icon(Icons.bed),
@@ -75,15 +75,18 @@ class PropertiesList extends StatelessWidget {
                               style:
                                   const TextStyle(fontWeight: FontWeight.bold),
                             ),
-                            const SizedBox(width: 100),
+                            const SizedBox(width: 150),
                             const Icon(Icons.mail),
                             const SizedBox(width: 2),
-                            const Icon(Icons.contact_page_rounded),
+                            const Icon(
+                              FontAwesomeIcons.whatsapp,
+                              color: Colors.green,
+                            ),
                           ],
                         ),
                         const SizedBox(height: 4),
                         Text(
-                          ('${properties[index].pPric as String} Crore'),
+                          ('Price :${properties[index].pPric as String} Crore'),
                           style: const TextStyle(
                             color: Colors.black,
                             fontSize: 18,

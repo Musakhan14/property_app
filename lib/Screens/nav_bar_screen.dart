@@ -5,6 +5,7 @@ import 'package:property_app/Screens/home_screen.dart';
 import 'package:property_app/Screens/profile_screen.dart';
 import 'package:property_app/Screens/properties_screen.dart';
 import 'package:property_app/Screens/search_screen.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
 
@@ -17,7 +18,7 @@ class BNavigationBar extends StatefulWidget {
 
 List<TabItem> items = const [
   TabItem(
-    icon: Icons.home,
+    icon: FontAwesomeIcons.house,
     title: 'Home',
   ),
   TabItem(
@@ -39,7 +40,7 @@ List<TabItem> items = const [
 ];
 int visit = 0;
 List<Widget> _screen = [
-  HomePage(),
+  const HomePage(),
   PropertiesList(),
   const SearchScreen(),
   const FavoriteScreen(),

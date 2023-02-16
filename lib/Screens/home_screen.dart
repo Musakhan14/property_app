@@ -4,7 +4,6 @@ import 'package:property_app/Screens/auth/signup_screen.dart';
 import '../Widgets/app_drawer.dart';
 import '../Widgets/categoris_main_screen.dart';
 import '../Widgets/recommende_properties.dart';
-import 'nav_bar_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
