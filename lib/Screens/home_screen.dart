@@ -1,28 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:property_app/Screens/auth/signup_screen.dart';
+import 'package:property_app/Screens/societies_screen.dart';
 
 import '../Widgets/app_drawer.dart';
-import '../Widgets/categoris_main_screen.dart';
 import '../Widgets/recommende_properties.dart';
+import 'budget_screen.dart';
+import 'category_screeen.dart';
+import 'cities_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
-
-//  Type bottomNavigationBar=BottomNavigationBar;
-
-  // HomePage({required this.bottomNavigationBar, super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage>
+    with SingleTickerProviderStateMixin {
+  TabController? _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(vsync: this, length: 4);
+  }
+
+  @override
+  void dispose() {
+    _tabController!.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color(0xffF8F3F3),
-      backgroundColor: const Color(0xffEBEBEB),
-
+      backgroundColor: Colors.white,
       // App Drawer
       drawer: const AppDrawe(),
       appBar: AppBar(
@@ -38,35 +50,26 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
-          'mProperty',
+          'Property App',
           style: TextStyle(color: Theme.of(context).primaryColor),
         ),
       ),
+
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 150,
+              height: 110,
               width: double.infinity,
-              decoration: BoxDecoration(
-                  borderRadius: const BorderRadius.only(
-                      bottomLeft: Radius.circular(50),
-                      bottomRight: Radius.circular(50)),
-                  color: Theme.of(context).primaryColor),
+              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
               child: Padding(
                 padding: const EdgeInsets.only(top: 20, right: 20, left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text(
-                      'Search for Houses and Lands',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 22,
-                      ),
-                    ),
                     const SizedBox(height: 10),
+                    // TextField For search
                     TextField(
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.symmetric(
@@ -90,26 +93,46 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
+            //Different Categories
+            DefaultTabController(
+                length: 4, // length of tabs
+                initialIndex: 0,
+                child: Column(
+                    // crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: <Widget>[
+                      TabBar(
+                        indicatorColor: Theme.of(context).primaryColor,
+                        labelColor: Theme.of(context).primaryColor,
+                        unselectedLabelColor: Colors.black,
+                        tabs: const [
+                          Tab(text: 'Category'),
+                          Tab(text: 'Budget'),
+                          Tab(text: 'Cities'),
+                          Tab(text: 'Societies'),
+                        ],
+                      ),
+                      //Different Categories screens
+                      Container(
+                        // width: double.infinity,
+                        height: 270,
+                        // height: MediaQuery.of(context).size.height *
+                        //     0.442, //height of TabBarView
+                        decoration: const BoxDecoration(
+                            border: Border(
+                                top: BorderSide(
+                                    color: Colors.grey, width: 0.5))),
+                        child: TabBarView(children: [
+                          CategoryScreen(),
+                          const BudgetScreen(),
+                          CitiesScreen(),
+                          const SocietiesScreen(),
+                        ]),
+                      )
+                    ])),
+            //
+
             const SizedBox(height: 10),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
-                'Categories',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const SizedBox(height: 10),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: SizedBox(
-                height: 100,
-                child: Category(),
-              ),
-            ),
+
             const SizedBox(height: 10),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),

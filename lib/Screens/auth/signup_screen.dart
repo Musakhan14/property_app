@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:property_app/Screens/auth/login_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-
 class SignupPage extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _usernameController = TextEditingController();
@@ -240,12 +239,12 @@ class SignupPage extends StatelessWidget {
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children:  [
+                            children: [
                               Icon(FontAwesomeIcons.google,
                                   color: Theme.of(context).primaryColor),
                               // Image.asset('assets/google_logo.png', height: 24.0),
-                              SizedBox(width: 10.0),
-                              Text('Login with Google'),
+                              const SizedBox(width: 10.0),
+                              const Text('Login with Google'),
                             ],
                           ),
                         ),

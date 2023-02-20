@@ -11,9 +11,7 @@ class AppDrawe extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        backgroundColor: const Color(0xffEBEBEB),
-
-        // shape: DrawerThemeData,
+        backgroundColor: const Color(0xffEBEBEB), // shape: DrawerThemeData,
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
