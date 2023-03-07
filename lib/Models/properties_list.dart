@@ -7,6 +7,7 @@
 // }
 
 class PropertiesM {
+  final Function? pFunction;
   final String? pImageUrl;
   final String? id;
   final String? title;
@@ -14,6 +15,7 @@ class PropertiesM {
   final String? pPric;
 
   const PropertiesM({
+    this.pFunction,
     required this.pImageUrl,
     required this.id,
     required this.title,

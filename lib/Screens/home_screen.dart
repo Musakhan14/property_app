@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:property_app/Screens/auth/signup_screen.dart';
 import 'package:property_app/Screens/societies_screen.dart';
+import 'package:property_app/Screens/tab_screens/cities_screen.dart';
 
 import '../Widgets/app_drawer.dart';
 import '../Widgets/recommende_properties.dart';
-import 'budget_screen.dart';
-import 'category_screeen.dart';
-import 'cities_screen.dart';
+import 'tab_screens/budget_screen.dart';
+import 'tab_screens/category_screeen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -114,18 +114,18 @@ class _HomePageState extends State<HomePage>
                       //Different Categories screens
                       Container(
                         // width: double.infinity,
-                        height: 270,
-                        // height: MediaQuery.of(context).size.height *
-                        //     0.442, //height of TabBarView
+                        // height: 270,
+                        height: MediaQuery.of(context).size.height *
+                            0.35, //height of TabBarView
                         decoration: const BoxDecoration(
                             border: Border(
                                 top: BorderSide(
                                     color: Colors.grey, width: 0.5))),
-                        child: TabBarView(children: [
+                        child: const TabBarView(children: [
                           CategoryScreen(),
-                          const BudgetScreen(),
-                          CitiesScreen(),
-                          const SocietiesScreen(),
+                          BudgetScreen(),
+                          Cities(),
+                          SocietiesScreen(),
                         ]),
                       )
                     ])),
