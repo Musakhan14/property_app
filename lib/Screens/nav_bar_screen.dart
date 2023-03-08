@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:property_app/Screens/favorite_screen.dart';
 import 'package:property_app/Screens/home_screen.dart';
 import 'package:property_app/Screens/profile_screen.dart';
-import 'package:property_app/Screens/properties_screen.dart';
 import 'package:property_app/Screens/search_screen.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'package:awesome_bottom_bar/awesome_bottom_bar.dart';
+
+import 'all_properties_screen.dart';
 
 class BNavigationBar extends StatefulWidget {
   const BNavigationBar({super.key});
@@ -41,7 +42,7 @@ List<TabItem> items = const [
 int visit = 0;
 List<Widget> _screen = [
   const HomePage(),
-  PropertiesList(),
+  const AllPropertiesList(),
   const SearchScreen(),
   const FavoriteScreen(),
   const ProfileScreen(),

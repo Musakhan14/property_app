@@ -1,9 +1,9 @@
 class Budget {
-  Function? bFunction;
+  final String id;
   final String bTitle;
 
   Budget({
-    required this.bFunction,
+    required this.id,
     required this.bTitle,
   });
   // : assert(icon is IconData || icon is Widget,

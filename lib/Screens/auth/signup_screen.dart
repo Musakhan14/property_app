@@ -58,8 +58,8 @@ class SignupPage extends StatelessWidget {
                               fontWeight: FontWeight.normal,
                             ),
                             fillColor: Colors.white,
-                            labelText: 'Username',
-                            hintText: 'Enter your username',
+                            labelText: 'Name',
+                            hintText: 'Enter your Name',
                             contentPadding: const EdgeInsets.symmetric(
                                 vertical: 15, horizontal: 20),
                             border: OutlineInputBorder(

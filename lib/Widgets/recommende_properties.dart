@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class RecommendedProperties extends StatelessWidget {
+  final String forSale;
+  final String location;
+  final int price;
+  final String image;
   const RecommendedProperties({
     Key? key,
+    required this.image,
     required this.forSale,
     required this.location,
     required this.price,
   }) : super(key: key);
-  final String forSale;
-  final String location;
-  final int price;
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +22,18 @@ class RecommendedProperties extends StatelessWidget {
           width: 150,
           height: 120,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            // color: const Color(0xffF8F3F3),
+            borderRadius: BorderRadius.circular(10),
             color: const Color(0xffEBEBEB),
           ),
-          // child: Image(
-          // image: AssetImage('assets/images/Logo.png'),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: Image(
+              image: AssetImage(image),
+              fit: BoxFit.cover,
+            ),
+          ),
         ),
-        // ),
         const SizedBox(height: 5),
-
         Text(
           forSale,
           style: const TextStyle(

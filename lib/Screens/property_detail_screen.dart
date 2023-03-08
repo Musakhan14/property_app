@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
 import 'package:flutter/material.dart';
 import 'package:property_app/dummy_data.dart/dummy_data.dart';
 
@@ -13,7 +15,8 @@ class PropertyDeatilScreen extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.white,
         appBar: AppBar(
-          title: Text('The Property - $propertyId'),
+          backgroundColor: Theme.of(context).primaryColor,
+          title: Text('${selectedProperty.title}'),
         ),
         body: SingleChildScrollView(
           child: Column(children: [
@@ -27,6 +30,12 @@ class PropertyDeatilScreen extends StatelessWidget {
               'About this Property',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
+            const Divider(
+              thickness: 1,
+              color: Colors.grey,
+              indent: 0,
+              endIndent: 0,
+            ),
             const SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -34,6 +43,9 @@ class PropertyDeatilScreen extends StatelessWidget {
                 Column(
                   children: const [
                     Icon(Icons.directions_car),
+                    SizedBox(
+                      width: 8,
+                    ),
                     SizedBox(height: 10),
                     Text('Car'),
                   ],
@@ -41,6 +53,9 @@ class PropertyDeatilScreen extends StatelessWidget {
                 Column(
                   children: const [
                     Icon(Icons.hotel),
+                    SizedBox(
+                      width: 8,
+                    ),
                     SizedBox(height: 10),
                     Text('Bed'),
                   ],
@@ -48,6 +63,9 @@ class PropertyDeatilScreen extends StatelessWidget {
                 Column(
                   children: const [
                     Icon(Icons.bathtub),
+                    SizedBox(
+                      width: 8,
+                    ),
                     SizedBox(height: 10),
                     Text('Shower'),
                   ],
@@ -55,6 +73,9 @@ class PropertyDeatilScreen extends StatelessWidget {
                 Column(
                   children: const [
                     Icon(Icons.straighten),
+                    SizedBox(
+                      width: 8,
+                    ),
                     SizedBox(height: 10),
                     Text('Ruler'),
                   ],
@@ -65,6 +86,12 @@ class PropertyDeatilScreen extends StatelessWidget {
             const Text(
               'Property Details',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            ),
+            const Divider(
+              thickness: 1,
+              color: Colors.grey,
+              indent: 0,
+              endIndent: 0,
             ),
             const SizedBox(height: 20),
             Padding(
@@ -133,6 +160,225 @@ class PropertyDeatilScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            const Text(
+              'Description',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            const Divider(
+              thickness: 1,
+              color: Colors.grey,
+              indent: 0,
+              endIndent: 0,
+            ),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              child: Text(
+                'This property is located in a prime area with easy access to all amenities such as schools, hospitals, shopping centers, and public transportation. It features spacious rooms, ample parking, and a beautiful garden. The property is perfect for families looking for a comfortable home in a great neighborhood. Don\'t miss this opportunity to own your dream home!',
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: Colors.grey[700],
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            const Divider(
+              thickness: 1,
+              color: Colors.grey,
+              indent: 10,
+              endIndent: 10,
+            ),
+            const Text(
+              'Features',
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            const SizedBox(height: 10),
+            Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Kitchen'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Parking'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('TV Lounge'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Water'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Electricity'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Balcony'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Rooftop'),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(width: MediaQuery.of(context).size.width * 0.2),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Kitchen'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Parking'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('TV Lounge'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Water'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Electricity'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Balcony'),
+                        ],
+                      ),
+                      const SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Icon(Icons.check, color: Colors.green),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text('Rooftop'),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            const Divider(
+              thickness: 1,
+              color: Colors.grey,
+              indent: 10,
+              endIndent: 10,
             ),
           ]),
         ));

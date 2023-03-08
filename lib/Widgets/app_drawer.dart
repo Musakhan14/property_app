@@ -33,7 +33,7 @@ class AppDrawe extends StatelessWidget {
                       ),
                       const SizedBox(width: 10),
                       Text(
-                        'mPrpoerty',
+                        'Property App',
                         style: TextStyle(
                           color: Theme.of(context).primaryColor,
                           fontSize: 22,
@@ -93,8 +93,10 @@ class AppDrawe extends StatelessWidget {
               ),
               title: const Text('Properties'),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PropertiesList()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PropertiesList()));
               },
             ),
             ListTile(
@@ -117,8 +119,10 @@ class AppDrawe extends StatelessWidget {
               ),
               title: const Text('Term and Policies'),
               onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PropertiesList()));
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const PropertiesList()));
               },
             ),
           ],

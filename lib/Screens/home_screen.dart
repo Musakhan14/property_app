@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:property_app/Screens/auth/signup_screen.dart';
-import 'package:property_app/Screens/societies_screen.dart';
+import 'package:property_app/Screens/tab_screens/societies_screen.dart';
 import 'package:property_app/Screens/tab_screens/cities_screen.dart';
 
 import '../Widgets/app_drawer.dart';
@@ -73,7 +73,7 @@ class _HomePageState extends State<HomePage>
                     TextField(
                       decoration: InputDecoration(
                         contentPadding: const EdgeInsets.symmetric(
-                            vertical: 14, horizontal: 20),
+                            vertical: 5, horizontal: 10),
                         suffixIcon: const Icon(Icons.done),
                         prefixIcon: Icon(
                           Icons.search,
@@ -82,9 +82,9 @@ class _HomePageState extends State<HomePage>
                         filled: true,
                         fillColor: Colors.white,
                         border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(20)),
+                            borderRadius: BorderRadius.circular(10)),
                         focusedBorder: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20.0)),
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
                           borderSide: BorderSide(color: Colors.black),
                         ),
                       ),
@@ -130,12 +130,9 @@ class _HomePageState extends State<HomePage>
                       )
                     ])),
             //
-
-            const SizedBox(height: 10),
-
             const SizedBox(height: 10),
             const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Recommended',
                 style: TextStyle(
@@ -145,7 +142,7 @@ class _HomePageState extends State<HomePage>
                 ),
               ),
             ),
-            const SizedBox(height: 10),
+            const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: Container(
@@ -155,23 +152,27 @@ class _HomePageState extends State<HomePage>
                   color: Colors.white,
                 ),
                 child: Padding(
-                  padding: const EdgeInsets.all(15.0),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 5, vertical: 10),
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: const [
                       RecommendedProperties(
+                        image: 'assets/images/h1.jpeg',
                         forSale: 'For Sale',
                         location: 'UOM',
                         price: 100000,
                       ),
-                      SizedBox(width: 5),
+                      SizedBox(width: 8),
                       RecommendedProperties(
+                        image: 'assets/images/h5.jpeg',
                         forSale: 'For Sale',
                         location: 'UOM',
                         price: 100000,
                       ),
-                      SizedBox(width: 5),
+                      SizedBox(width: 8),
                       RecommendedProperties(
+                        image: 'assets/images/h3.jpeg',
                         forSale: 'For Sale',
                         location: 'UOM',
                         price: 100000,

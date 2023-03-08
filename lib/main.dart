@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:property_app/Screens/properties_screen.dart';
+import 'package:property_app/Screens/property_detail_screen.dart';
 
 import 'Screens/splash_screen.dart';
 
@@ -26,6 +28,11 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(secondary: const Color(0xffEC9E37))),
       home: const SplashScreen(),
+      routes: {
+        // '/': (context) => const SplashScreen(),
+        'properties-screen': (context) => const PropertiesList(),
+        'PropertyDeatilScreen': (context) => const PropertyDeatilScreen(),
+      },
     );
   }
 }

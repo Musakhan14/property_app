@@ -4,7 +4,7 @@ class CategoriesItem extends StatelessWidget {
   final String cId;
   final IconData? icon;
   final String cTitle;
-  // final Function cFunction;
+  // cFunction;
 
   const CategoriesItem({
     super.key,
@@ -20,22 +20,6 @@ class CategoriesItem extends StatelessWidget {
       'title': cTitle,
     });
   }
-  // void selectCategory(BuildContext context) {
-  //   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-  //     return PropertiesList(
-  //       cId: cId,
-  //       cTitle: cTitle,
-  //     );
-  //   }));
-  // }
-  // void selectCategory(BuildContext context) {
-  //   Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-  //     return HousesCategory(
-  //       cId: cId,
-  //       cTitle: cTitle,
-  //     );
-  //   }));
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +51,7 @@ class CategoriesItem extends StatelessWidget {
                   color: Color.fromARGB(255, 129, 125, 125),
                   // color:
                   //     Theme.of(context).colorScheme.secondary,
-                  fontSize: 16,
+                  fontSize: 13,
                 ),
                 textAlign: TextAlign.center,
               )
