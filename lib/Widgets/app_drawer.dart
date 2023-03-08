@@ -4,6 +4,7 @@ import 'package:property_app/Screens/contact_us_screen.dart';
 
 import '../Screens/home_screen.dart';
 import '../Screens/properties_screen.dart';
+import '../Screens/term_policy.dart';
 
 class AppDrawe extends StatelessWidget {
   const AppDrawe({super.key});
@@ -33,7 +34,7 @@ class AppDrawe extends StatelessWidget {
                       ),
                       const SizedBox(width: 10),
                       Text(
-                        'Property App',
+                        'Property Advisor',
                         style: TextStyle(
                           color: Theme.of(context).primaryColor,
                           fontSize: 22,
@@ -122,7 +123,7 @@ class AppDrawe extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PropertiesList()));
+                        builder: (context) => const TermPolicies()));
               },
             ),
           ],

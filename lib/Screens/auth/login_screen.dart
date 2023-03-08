@@ -49,7 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   const SizedBox(width: 10),
                   Text(
-                    'Prpoerty App',
+                    'Prpoerty Advisor',
                     style: TextStyle(
                       color: Theme.of(context).primaryColor,
                       fontSize: 22,

@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage>
         backgroundColor: Colors.white,
         centerTitle: true,
         title: Text(
-          'Property App',
+          'Property Advisor',
           style: TextStyle(color: Theme.of(context).primaryColor),
         ),
       ),
@@ -72,6 +72,11 @@ class _HomePageState extends State<HomePage>
                     // TextField For search
                     TextField(
                       decoration: InputDecoration(
+                        hintText: 'Search for properties',
+                        hintStyle: const TextStyle(
+                          fontWeight: FontWeight.normal,
+                          fontSize: 15,
+                        ),
                         contentPadding: const EdgeInsets.symmetric(
                             vertical: 5, horizontal: 10),
                         suffixIcon: const Icon(Icons.done),

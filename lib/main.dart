@@ -27,11 +27,12 @@ class MyApp extends StatelessWidget {
           ),
           colorScheme: ColorScheme.fromSwatch()
               .copyWith(secondary: const Color(0xffEC9E37))),
-      home: const SplashScreen(),
+      home: const SplashPage(),
       routes: {
         // '/': (context) => const SplashScreen(),
         'properties-screen': (context) => const PropertiesList(),
         'PropertyDeatilScreen': (context) => const PropertyDeatilScreen(),
+        // 'PropertiesListB': (context) => const PropertiesListB(),
       },
     );
   }

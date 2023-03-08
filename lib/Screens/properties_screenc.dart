@@ -3,32 +3,30 @@ import 'package:flutter/material.dart';
 import '../Widgets/property_item.dart';
 import '../dummy_data.dart/dummy_data.dart';
 
-class PropertiesList extends StatelessWidget {
-  // final String cTitle;
-  // final String cId;
-  const PropertiesList(
-      {
-      // required this.cTitle, required this.cId,
-      super.key});
+class PropertiesListC extends StatelessWidget {
+  final String cityTitle;
+  final String cityId;
+  const PropertiesListC(
+      {required this.cityTitle, required this.cityId, super.key});
 
   // final properties = PROPERTIES_DATA;
   @override
   Widget build(BuildContext context) {
-    final routeArgs =
-        ModalRoute.of(context)?.settings.arguments as Map<String, String?>;
+    // final routeArgs =
+    //     ModalRoute.of(context)?.settings.arguments as Map<String, String>;
     // final budgetId = routeArgs['id'];
     // final budgetTitle = routeArgs['title'];
 
-    final categoryTitle = routeArgs['title'];
-    final categoryId = routeArgs['id'];
+    // final categoryTitle = routeArgs['title'];
+    // final categoryId = routeArgs['id'];
     final properties = PROPERTIES_DATA.where((property) {
-      return property.categories!.contains(categoryId);
+      return property.categories!.contains(cityId);
     }).toList();
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Theme.of(context).primaryColor,
-        title: Text(' ${categoryTitle as String}'),
+        title: Text(' $cityTitle'),
       ),
       body: ListView.builder(
         itemBuilder: (context, index) {
