@@ -1,8 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-import 'nav_bar_screen.dart';
-
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 
@@ -16,12 +14,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 4), () {
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) =>
-                const BNavigationBar()), // replace this with your next screen
-      );
+      Navigator.pushNamed(context, 'BNavigationBar');
     });
   }
 

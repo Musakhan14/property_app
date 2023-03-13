@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:property_app/Screens/all_properties_screen.dart';
 import 'package:property_app/Screens/auth/signup_screen.dart';
 import 'package:property_app/Screens/contact_us_screen.dart';
 
 import '../Screens/home_screen.dart';
-import '../Screens/properties_screen.dart';
 import '../Screens/term_policy.dart';
 
 class AppDrawe extends StatelessWidget {
@@ -97,7 +97,7 @@ class AppDrawe extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const PropertiesList()));
+                        builder: (context) => const AllPropertiesList()));
               },
             ),
             ListTile(

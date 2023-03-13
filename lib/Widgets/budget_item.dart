@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:property_app/Screens/properties_screenb.dart';
 
 class BudgetItem extends StatelessWidget {
   final String bId;
@@ -9,21 +8,21 @@ class BudgetItem extends StatelessWidget {
     required this.bId,
     required this.budgetTitle,
   });
-  void selectCategory(BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => PropertiesListB(
-                  bTitle: budgetTitle,
-                  bId: bId,
-                )));
-  }
   // void selectCategory(BuildContext context) {
-  //   Navigator.of(context).pushNamed('PropertiesListB', arguments: {
-  //     'id': bId,
-  //     'title': budgetTitle,
-  //   });
+  //   Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //           builder: (context) => PropertiesListB(
+  //                 bTitle: budgetTitle,
+  //                 bId: bId,
+  //               )));
   // }
+  void selectCategory(BuildContext context) {
+    Navigator.of(context).pushNamed('PropertiesListB', arguments: {
+      'id': bId,
+      'title': budgetTitle,
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

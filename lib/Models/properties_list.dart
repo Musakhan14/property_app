@@ -7,6 +7,7 @@
 // }
 
 class PropertiesM {
+  final bool? isFavorite;
   final int? baths;
   final int? beds;
 
@@ -14,17 +15,16 @@ class PropertiesM {
   final String? title;
   final List<String>? categories;
   final int prizeCategory;
-  // final Function? pFunction;
   final String? pImageUrl;
   final String? pLocation;
   final String? pPric;
 
   PropertiesM({
+    this.isFavorite,
     required this.baths,
     required this.beds,
     this.categories,
     required this.prizeCategory,
-    // this.pFunction,
     required this.pImageUrl,
     required this.id,
     required this.title,

@@ -4,21 +4,21 @@ import '../Widgets/property_item.dart';
 import '../dummy_data.dart/dummy_data.dart';
 
 class PropertiesListC extends StatelessWidget {
-  final String cityTitle;
-  final String cityId;
-  const PropertiesListC(
-      {required this.cityTitle, required this.cityId, super.key});
+  const PropertiesListC({super.key});
+
+  // final String cityTitle;
+  // final String cityId;
+  // const PropertiesListC(
+  // {required this.cityTitle, required this.cityId, super.key});
 
   // final properties = PROPERTIES_DATA;
   @override
   Widget build(BuildContext context) {
-    // final routeArgs =
-    //     ModalRoute.of(context)?.settings.arguments as Map<String, String>;
-    // final budgetId = routeArgs['id'];
-    // final budgetTitle = routeArgs['title'];
+    final routeArgs =
+        ModalRoute.of(context)?.settings.arguments as Map<String, String>;
+    final cityId = routeArgs['id'];
+    final cityTitle = routeArgs['title'];
 
-    // final categoryTitle = routeArgs['title'];
-    // final categoryId = routeArgs['id'];
     final properties = PROPERTIES_DATA.where((property) {
       return property.categories!.contains(cityId);
     }).toList();

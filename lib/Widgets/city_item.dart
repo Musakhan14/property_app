@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../Screens/properties_screenc.dart';
-
 class CityItem extends StatelessWidget {
   final String cityId;
   final String cityTitle;
@@ -10,21 +8,21 @@ class CityItem extends StatelessWidget {
     required this.cityId,
     required this.cityTitle,
   });
-  void selectCategory(BuildContext context) {
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: (context) => PropertiesListC(
-                  cityId: cityId,
-                  cityTitle: cityTitle,
-                )));
-  }
   // void selectCategory(BuildContext context) {
-  //   Navigator.of(context).pushNamed('PropertiesListB', arguments: {
-  //     'id': bId,
-  //     'title': budgetTitle,
-  //   });
+  //   Navigator.push(
+  //       context,
+  //       MaterialPageRoute(
+  //           builder: (context) => PropertiesListC(
+  //                 cityId: cityId,
+  //                 cityTitle: cityTitle,
+  //               )));
   // }
+  void selectCategory(BuildContext context) {
+    Navigator.of(context).pushNamed('PropertiesListB', arguments: {
+      'id': cityId,
+      'title': cityTitle,
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

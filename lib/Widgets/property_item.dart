@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 /// A widget that represents a single property item.
-class PropertyItem extends StatelessWidget {
+class PropertyItem extends StatefulWidget {
   final String pImageUrl;
   final String pTitle;
   final String pLocation;
@@ -10,12 +10,11 @@ class PropertyItem extends StatelessWidget {
   final String pPrice;
   final int? baths;
   final int? beds;
-  // final Function
+  // bool isFavorite;
+  final List<PropertyItem>? propertyItems;
 
-  /// Creates a new instance of [PropertyItem].
-  ///
-  /// The [pImageUrl], [pTitle], [pLocation], [id], and [pPrice] parameters must not be null.
   const PropertyItem({
+    this.propertyItems,
     Key? key,
     required this.pImageUrl,
     required this.pTitle,
@@ -26,14 +25,21 @@ class PropertyItem extends StatelessWidget {
     required this.beds,
   }) : super(key: key);
 
+  @override
+  State<PropertyItem> createState() => _PropertyItemState();
+}
+
+class _PropertyItemState extends State<PropertyItem> {
   /// Navigates to the PropertyDetailScreen when the property item is tapped.
   void _selectProperty(BuildContext context) {
     Navigator.pushNamed(
       context,
       'PropertyDeatilScreen',
-      arguments: id,
+      arguments: widget.id,
     );
   }
+
+  bool isFavorite = false;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +61,7 @@ class PropertyItem extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(8),
                   child: Image.asset(
-                    pImageUrl,
+                    widget.pImageUrl,
                     height: 110,
                     width: 100,
                     fit: BoxFit.cover,
@@ -68,23 +74,21 @@ class PropertyItem extends StatelessWidget {
                     children: [
                       // Displays the property title
                       Text(
-                        pTitle,
+                        widget.pTitle,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: mediaQuery.size.width * 0.05,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(height: 5),
                       // Displays the property location
                       Text(
-                        pLocation,
+                        widget.pLocation,
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: mediaQuery.size.width * 0.04,
                         ),
                       ),
-                      const SizedBox(height: 10),
                       // Displays the number of bedrooms and bathrooms
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -94,7 +98,7 @@ class PropertyItem extends StatelessWidget {
                               const Icon(Icons.bed, size: 23),
                               const SizedBox(width: 5),
                               Text(
-                                beds.toString(),
+                                widget.beds.toString(),
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold),
                               ),
@@ -102,7 +106,7 @@ class PropertyItem extends StatelessWidget {
                               const Icon(Icons.bathtub, size: 19),
                               const SizedBox(width: 5),
                               Text(
-                                baths.toString(),
+                                widget.baths.toString(),
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold),
                               ),
@@ -117,14 +121,14 @@ class PropertyItem extends StatelessWidget {
                                 FontAwesomeIcons.whatsapp,
                                 color: Colors.green,
                               ),
+                              SizedBox(width: 10),
                             ],
                           ),
                         ],
                       ),
-                      const SizedBox(height: 10),
                       // Displays the property price
                       Text(
-                        'Price: $pPrice',
+                        'Price: ${widget.pPrice}',
                         style: TextStyle(
                           color: Colors.black,
                           fontSize: mediaQuery.size.width * 0.04,
